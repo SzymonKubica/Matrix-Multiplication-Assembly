@@ -63,21 +63,21 @@ mult(int*,int*,int,int):
 	str		r0, [sp, #4] ; stores the value of r0 at sp + 4. j := 0.
 	b			.middle_for_loop
 .middle_for_loop:
-	ldr r0, [sp, #4] ; loads the value of j into r0. r0 := j.
-	ldr r1, [r11, #-12] ; loads value of rows into r1, r1 := rows.
-	cmp r0, r1 ; compares j < rows.
-	bge .end_of_middle_for_loop ; if j >= rows branch to the end of middle for loop.
-	b		.middle_for_loop_body ; otherwise branch to the body.
+	ldr		r0, [sp, #4] ; loads the value of j into r0. r0 := j.
+	ldr		r1, [r11, #-12] ; loads value of rows into r1, r1 := rows.
+	cmp		r0, r1 ; compares j < rows.
+	bge		.end_of_middle_for_loop ; if j >= rows branch to the end of middle for loop.
+	b			.middle_for_loop_body ; otherwise branch to the body.
 .middle_for_loop_body:
-	mov r0, #0 ; initialises r0 to 0.
-	str r0, [sp] ; stores value of r0 at sp. k := 0.
-	b		.inner_for_loop ; branches to the inner for loop.
+	mov		r0, #0 ; initialises r0 to 0.
+	str		r0, [sp] ; stores value of r0 at sp. k := 0.
+	b			.inner_for_loop ; branches to the inner for loop.
 .inner_for_loop: 
-	ldr r0, [sp] ; loads the value of k into r0. k := 0.
-	ldr r1, [sp, #16] ; loads the value of columns into r1. r1 := columns.
-	cmp r0, r1 ; compares k < columns.
-	bge .end_of_inner_for_loop ; if k >= columns branch to the end of the loop.
-	b		.inner_for_loop_body ; otherwise proceed to the body.
+	ldr		r0, [sp] ; loads the value of k into r0. k := 0.
+	ldr		r1, [sp, #16] ; loads the value of columns into r1. r1 := columns.
+	cmp		r0, r1 ; compares k < columns.
+	bge		.end_of_inner_for_loop ; if k >= columns branch to the end of the loop.
+	b			.inner_for_loop_body ; otherwise proceed to the body.
 .inner_for_loop_body:	
 	ldr		r0, [r11, #-4] ; loads the pointer to matrixA to r0 from r11 -4 in memory.
 	ldr		r1, [sp, #8] ; loads the value of i into r1. r1 := i.
