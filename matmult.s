@@ -27,7 +27,7 @@ _main:
 	str		r0,[r11, #-32] ; result of mult is stored at r11 -32.
 	ldr		r1,[r11, #-32] ; result of mult is loaded from r11 -32 to r1.
 	ldr		r0, .result_message ; result message is loaded into r0.
-	bl    printf ; branch into the execution of printf with r0 and r1 as arguments.
+	bl		printf ; branch into the execution of printf with r0 and r1 as arguments.
 	ldr		r1, [sp, #12] ; 0 present at the start at sp +12 is loaded into r1.
 	str		r0, [sp, #4]  ; stores the present value of r0; 
 	mov		r0, r1 ; 0 containted in r1 is loaded into r0.
