@@ -1,5 +1,5 @@
 _main:
-	push	{r4, r5, r6, r7, r8, r10, r11, lr} ; pushes registers onto the stack.
+	push	{r4, r5, r6, r7, r8, r10, r11, lr} ; pushes used registers onto the stack.
 	add		r11, sp, #24 ; adjusting stack pointer (SP)
 	sub		sp, sp, #72 ; adjusting stack pointer (SP)
 	mov		r0, #0 ; initializing register r0 to hold a value 0.
